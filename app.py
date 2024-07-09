@@ -30,5 +30,5 @@ class InferlessPythonModel:
         return {"result": output[0]['generated_text'] }
 
     def finalize(self):
-        self.generator = None
+        self.pipe = None
         print("Pipeline finalized.", flush=True)

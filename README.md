@@ -22,7 +22,7 @@ This will create a copy of the repository in your own GitHub account, allowing y
 ### Create a Custom Runtime in Inferless
 To access the custom runtime window in Inferless, simply navigate to the sidebar and click on the Create new Runtime button. A pop-up will appear.
 
-Next, provide a suitable name for your custom runtime and proceed by uploading the inferless-runtime.yaml file given above. Finally, ensure you save your changes by clicking on the save button.
+Next, provide a suitable name for your custom runtime and proceed by uploading the `inferless-runtime-config.yaml` file given above. Finally, ensure you save your changes by clicking on the save button.
 
 ### Import the Model in Inferless
 Log in to your inferless account, select the workspace you want the model to be imported into and click the Add Model button.
@@ -37,13 +37,18 @@ Open the `app.py` file. This contains the main code for inference. It has three 
 
 **Initialize** -  This function is executed during the cold start and is used to initialize the model. If you have any custom configurations or settings that need to be applied during the initialization, make sure to add them in this function.
 
-**Infer** - This function is where the inference happens. The argument to this function `inputs`, is a dictionary containing all the input parameters. The keys are the same as the name given in inputs. Refer to [input](#input) for more.
+**Infer** - This function is where the inference happens. The argument to this function `inputs`, is a dictionary containing all the input parameters. The keys are the same as the name given in inputs. Refer to [input](https://docs.inferless.com/model-import/input-output-schema) for more.
 
 ```python
-def infer(self, inputs):
-    prompt = inputs["prompt"]
+def infer(self, input_data):
+    prompt = input_data['prompt']
+    roles = input_data['roles']
 ```
 
-**Finalize** - This function is used to perform any cleanup activity for example you can unload the model from the gpu by setting `self.pipe = None`.
+**Finalize** - This function is used to perform any cleanup activity for example you can unload the model from the gpu by setting to `None`.
+```python
+def finalize(self):
+    self.pipe = None
+```
 
 For more information refer to the [Inferless docs](https://docs.inferless.com/).

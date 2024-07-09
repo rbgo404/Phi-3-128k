@@ -5,7 +5,7 @@ Here's the [link](https://docs.inferless.com/how-to-guides/deploy-phi-3-128k) to
 
 ## TL;DR:
 - Deployment of Phi-3-mini-128k-instruct model using [Transformers](https://github.com/huggingface/transformers).
-- You can expect an average latency of `18.42 sec` and throughput of 24.71 tokens per second. This setup has an average cold start time of `7.82 sec`.
+- You can expect an average latency of `18.42 sec` and throughput of `24.71 tokens per second`. This setup has an average cold start time of `7.82 sec`.
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.

@@ -1,6 +1,7 @@
 # Tutorial - Deploy Phi-3-mini-128k-instruct using Inferless
 Microsoft has introduced [Phi-3-mini-128k-instruct](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct), a compact yet powerful model designed for instruction-following tasks.
 This model is part of the Phi-3 family, known for its efficiency and high performance. The Phi-3 Mini-128K-Instruct exhibited robust, state-of-the-art performance among models with fewer than 13 billion parameters.
+Here's the [link](https://docs.inferless.com/how-to-guides/deploy-phi-3-128k) to the tutorial.
 
 ## TL;DR:
 - Deployment of Phi-3-mini-128k-instruct model using [Transformers](https://github.com/huggingface/transformers).

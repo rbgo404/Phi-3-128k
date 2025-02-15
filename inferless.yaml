@@ -1,6 +1,6 @@
 version: 1.0.0
 
-name: Phi-3-128k
+name: phi-3-128k
 import_source: GIT
 
 # you can choose the options between ONNX, TENSORFLOW, PYTORCH
@@ -40,6 +40,6 @@ optional:
   input_file_name: input.json
   output_file_name: output.json
   runtime_file_name: inferless-runtime-config.yaml
-model_url: https://github.com/inferless/Phi-3-128k.git
+model_url: https://github.com/inferless/phi-3-128k.git
 provider: GITHUB
 io_schema: true

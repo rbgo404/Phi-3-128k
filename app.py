@@ -1,9 +1,14 @@
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"]='1'
+from huggingface_hub import snapshot_download
 from transformers import pipeline, AutoModelForCausalLM, AutoTokenizer
 
 class InferlessPythonModel:
     def initialize(self):
+        model_id = "microsoft/Phi-3-mini-128k-instruct"
+        snapshot_download(repo_id=model_id,allow_patterns=["*.safetensors"])
         self.model = AutoModelForCausalLM.from_pretrained(
-            "microsoft/Phi-3-mini-128k-instruct",
+            ,
             device_map="cuda",
             torch_dtype="auto",
             trust_remote_code=True,

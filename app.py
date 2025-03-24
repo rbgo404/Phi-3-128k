@@ -8,7 +8,7 @@ class InferlessPythonModel:
         model_id = "microsoft/Phi-3-mini-128k-instruct"
         snapshot_download(repo_id=model_id,allow_patterns=["*.safetensors"])
         self.model = AutoModelForCausalLM.from_pretrained(
-            ,
+            model_id,
             device_map="cuda",
             torch_dtype="auto",
             trust_remote_code=True,
